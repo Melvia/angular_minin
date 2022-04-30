@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
     text: string = 'My sample text';
     imgUrl: string = 'https://angular.io/assets/images/logos/angular/angular.svg';
     disabled = false;
-
+    textColor: string = "";
     ngOnInit() {}
     changeTitle() {
         this.title = "Title has been changed"
@@ -25,6 +25,8 @@ export class CardComponent implements OnInit {
     changeHandler(){
         console.log(this.title)
     }
+
+  
 
 
 }
