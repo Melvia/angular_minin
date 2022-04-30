@@ -7,6 +7,7 @@
   >
     {{ title }}
   </h2>
+  <!--
   <p
     class="text"
     [ngClass]="{
@@ -15,6 +16,10 @@
       red: textColor === 'red'
     }"
   >
+    {{ text }}
+  </p>      
+  -->
+  <p class="text" [class.blue]="textColor === 'blue'">
     {{ text }}
   </p>
   <div>
