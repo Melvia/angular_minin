@@ -1,5 +1,7 @@
 <div class="card">
-  <h2>{{ title }}</h2>
+  <h2 [ngStyle]="{ color: title.length < 5 ? 'red' : 'green' }">
+    {{ title }}
+  </h2>
   <p>{{ text }}</p>
   <div>
     <button (click)="changeTitle()">Change title</button>
@@ -7,11 +9,6 @@
   </div>
   <div class="buttons"></div>
   <div>
-    <input
-      type="text"
-      #myInput
-      (input)="inputHandler(myInput.value)"
-      [value]="title"
-    />
+    <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()" />
   </div>
 </div>

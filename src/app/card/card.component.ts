@@ -22,6 +22,9 @@ export class CardComponent implements OnInit {
      //   const value = event.target.value;
         this.title = value;
     }
+    changeHandler(){
+        console.log(this.title)
+    }
 
 
 }
