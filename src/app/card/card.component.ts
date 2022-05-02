@@ -1,5 +1,7 @@
 import { style } from "@angular/animations";
-import { Component, OnInit } from "@angular/core"
+import { Component, OnInit, Input } from "@angular/core"
+import { Card } from "../app.component";
+
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
@@ -9,14 +11,19 @@ import { Component, OnInit } from "@angular/core"
 })
 
 export class CardComponent implements OnInit {
+
+    @Input() card : Card = {title: '', text:''};
+    @Input() index: number=0;
     title: string = 'My Card title';
     text: string = 'My sample text';
+
+    cardDate: Date = new Date();
     imgUrl: string = 'https://angular.io/assets/images/logos/angular/angular.svg';
     disabled = false;
     textColor: string = "";
     ngOnInit() {}
     changeTitle() {
-        this.title = "Title has been changed"
+        this.card.title = "Title has been changed"
     }
     inputHandler(value: any) {
      //   const value = event.target.value;
